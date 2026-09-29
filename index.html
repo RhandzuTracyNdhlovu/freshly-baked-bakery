@@ -176,7 +176,11 @@ footer{background:#4b2d20;color:#fff;text-align:center;padding:30px}footer img{w
       });
     });
   }
-
+function escapeHTML(str) {
+  return (str || '').replace(/[&<>"']/g, function(c) {
+    return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c];
+  });
+}
   function renderReviews(reviews) {
     const grid = document.getElementById('review-grid');
     const scoreEl = document.getElementById('review-score');
@@ -191,8 +195,8 @@ footer{background:#4b2d20;color:#fff;text-align:center;padding:30px}footer img{w
     countEl.textContent = reviews.length + (reviews.length === 1 ? ' review' : ' reviews');
     grid.innerHTML = reviews.slice(0, 9).map(function(r){
       const starsStr = '&#9733;'.repeat(r.rating) + '&#9734;'.repeat(5 - r.rating);
-      const safeText = (r.text || '').replace(/</g,'&lt;');
-      const safeName = (r.name || 'Anonymous').replace(/</g,'&lt;');
+    const safeText = escapeHTML(r.text);
+    const safeName = escapeHTML(r.name || 'Anonymous');
       return '<div class="review-card"><span class="stars">' + starsStr + '</span><p>' + safeText + '</p><div class="who">' + safeName + '</div></div>';
     }).join('');
   }
