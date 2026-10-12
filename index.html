@@ -64,6 +64,17 @@ footer{background:#4b2d20;color:#fff;text-align:center;padding:30px}footer img{w
 .message-box textarea{min-height:110px;resize:vertical}
 .message-box .btn{margin-top:18px;width:100%;cursor:pointer;font-size:16px}
 .message-status{text-align:center;margin-top:12px;font-weight:bold;min-height:20px}
+.price-tables{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:24px;
+  align-items:start;
+  margin-top:45px;
+}
+.price-tables .price{margin-top:0}
+@media(max-width:800px){
+  .price-tables{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -129,7 +140,7 @@ footer{background:#4b2d20;color:#fff;text-align:center;padding:30px}footer img{w
     </div>
   </div>
 </section>
-<div class="price"><h2>Price List</h2><table><tr><th>Product</th><th>5L</th><th>10L</th><th>20L</th></tr><tr><td>Plain Biscuits</td><td>R390</td><td>R550</td><td>—</td></tr><tr><td>Scone</td><td>R250</td><td>R450</td><td>R750</td></tr><tr><td>Jam Tart</td><td>R420</td><td>R750</td><td>—</td></tr><tr><td>Condensed Milk Chocolate Biscuits</td><td>R480</td><td>R580</td><td>—</td></tr><tr><td>Ginger</td><td>R400</td><td>R720</td><td>—</td></tr></table></div></section>
+<section class="price-tables"><div class="price"><h2>Price List</h2><table><tr><th>Product</th><th>5L</th><th>10L</th><th>20L</th></tr><tr><td>Plain Biscuits</td><td>R390</td><td>R550</td><td>—</td></tr><tr><td>Scone</td><td>R250</td><td>R450</td><td>R750</td></tr><tr><td>Jam Tart</td><td>R420</td><td>R750</td><td>—</td></tr><tr><td>Condensed Milk Chocolate Biscuits</td><td>R480</td><td>R580</td><td>—</td></tr><tr><td>Ginger</td><td>R400</td><td>R720</td><td>—</td></tr></table></div><div class="price"><h2>Cupcake Prices</h2><table><tr><th>Type</th><th>Quantity</th><th>Price</th></tr><tr><td>Mini Cupcakes</td><td>Box of 60</td><td>R350</td></tr><tr><td>Plain Cupcakes — 1 Colour</td><td>6</td><td>R150</td></tr><tr><td>Plain Cupcakes — 1 Colour</td><td>12</td><td>R300</td></tr><tr><td>Plain Cupcakes — 1 Colour</td><td>24</td><td>R600</td></tr><tr><td>Plain Cupcakes — 1 Colour</td><td>36</td><td>R900</td></tr><tr><td>Customised Cupcakes</td><td>6</td><td>R200</td></tr><tr><td>Customised Cupcakes</td><td>12</td><td>R420</td></tr><tr><td>Customised Cupcakes</td><td>24</td><td>R840</td></tr><tr><td>Customised Cupcakes</td><td>36</td><td>R1300</td></tr></table><h3>Flavours Available</h3><p>Vanilla, Chocolate, Red Velvet, Caramel, Strawberry</p></div></section>
 
 <section class="about" id="about"><div class="about-box"><h2 style="text-align:left">Made with love.</h2><p>At Freshly Baked Bakery, we believe in the simple joy of homemade treats. Every batch is prepared with care, quality ingredients and plenty of love. Our goal is to bring a little sweetness to your day.</p></div><div class="badge"><span>🧁</span><strong>Fresh</strong><small>Fluffy & tasty</small></div></section>
 
