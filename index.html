@@ -253,9 +253,9 @@ function escapeHTML(str) {
       if (!text) { status.textContent = 'Please write a message.'; status.style.color = '#b33'; return; }
       msgSubmit.disabled = true;
       status.textContent = 'Sending...'; status.style.color = 'var(--dark)';
-      fetch(WORKER_URL + '/messages', {
+      fetch("https://formspree.io/f/xppqrlkp", {
         method: 'POST',
-        headers: {'Content-Type':'application/json'},
+        headers: {'Accept':'application/json', 'Content-Type':'application/json'},
         body: JSON.stringify({ name: name || 'Anonymous', contact: contact, text: text })
       })
       .then(function(res){ if(!res.ok) throw new Error('failed'); return res.json(); })
